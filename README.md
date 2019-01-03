@@ -91,3 +91,42 @@
   问题描述：弹出侧滑菜单后，点击空白地方可以穿透点击到被遮挡的内容。 
   
   解决办法：如果侧滑菜单布局在xml中是通过include引入的，在include引用的xml文件根节点加 ` android:clickable = "true"`
+  
+#### 8.防止双击重复跳转:
+
+  解决办法：在BaseActivity中重写startActivityForResult()方法。
+  
+  ``` java
+   private String mActivityJumpTag;
+     private long mActivityJumpTime;
+     @Override
+     public void startActivityForResult(Intent intent, int requestCode, @Nullable Bundle options){
+             if(startActivitySelfCheck(intent)){
+                   //查看源码得知 startActivity 最终也会调用 startActivityForResult
+                   super.startActivityForResult(intent,requestCode,options);
+             }
+     }
+
+    protected boolean startActivitySelfCheck(Intent intent){
+            //默认检查通过
+            boolean result = true; 
+            //标记对象
+            String tag;
+            if (intent.getComponent() != null){      //显式跳转
+                    tag = intent.getComponent().getClassName();
+            } else if (intent.getAction() != null){     //隐式跳转
+                    tag = intent.getAction();     
+            } else {
+                    return result;
+            } 
+                 
+                   if (tag.equals(mActivityJumpTag) && mActivityJumpTime
+                                                              >= SystemClock.uptimeMills() - 500) {
+                      return false;
+             }
+             //记录启动标记和时间
+             mActivityJumpTag = tag;
+             mActivityJumpTime = SystemClock.uptimeMills(); 
+                   return result;       
+    }
+    ```
