@@ -3,4 +3,5 @@
 
 - 遇到的问题
 1. 布局中EditText抢占焦点的解决办法：  在外层父布局中添加属性
-   `android:focusable = "true"       android:focusableInTouchMode = "true" //可以通过触摸获得焦点
+
+   ` android:focusable = "true"       android:focusableInTouchMode = "true" //可以通过触摸获得焦点
