@@ -97,8 +97,9 @@
   解决办法：在BaseActivity中重写startActivityForResult()方法。
   
   ``` java
-   private String mActivityJumpTag;
+     private String mActivityJumpTag;
      private long mActivityJumpTime;
+     
      @Override
      public void startActivityForResult(Intent intent, int requestCode, @Nullable Bundle options){
              if(startActivitySelfCheck(intent)){
@@ -129,4 +130,5 @@
              mActivityJumpTime = SystemClock.uptimeMills(); 
                    return result;       
     }
+    
     ```
