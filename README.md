@@ -12,10 +12,10 @@
 
 descendantFocusability 有三个属性：
   
-  >.beforeDescendants : viewGroup会优先于子控件获取到焦点
+  beforeDescendants : viewGroup会优先于子控件获取到焦点
      
-  >.afterDescendants : viewGroup只有当子控件不需要获取焦点时才获取焦点
+  afterDescendants : viewGroup只有当子控件不需要获取焦点时才获取焦点
        
-  >.blocksDescendants : viewGroup 会覆盖子类控件直接获取焦点
+  blocksDescendants : viewGroup 会覆盖子类控件直接获取焦点
   
   【2】checkBox 设置  android:focusable = "false"
