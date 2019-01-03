@@ -80,6 +80,7 @@
    最高两位是00代表未指定模式， 01代表精确模式，11代表最大模式。
 
    重写onMeasure()方法关键代码：
-         `     int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);
+   
+         ` int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);
          
               super.onMeasure(widthMeasureSpec,expandSpec);`
