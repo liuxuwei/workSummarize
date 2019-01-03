@@ -60,3 +60,26 @@
 解决方法： Android5497BugWorkaround.java 见代码文件。 在Activity的onCreate()方法中使用
 
 ` Android5497BugWorkaround.assistActivity(this); `
+
+#### 6.ScrollView 嵌套 ListView或者 GridView 的问题。
+ 
+ ScrollView嵌套 ListView 或 GridView，ListView 和 GridView 会出现只显示一条数据的情况。
+    
+ 解决办法：继承ListView或GridView，重写onMesure() 方法。
+     
+ 自定义view 或者 viewGroup时，使用int型的MesureSpec表示一个组件的大小。这个MesureSpec里不仅有组件的大小，还有大小的测量模式。系统组件的大小模式中有三种：
+   
+   精确模式（MesureSpec.EXACTLY） 这种模式下，尺寸的值是多少，这个组件的长或宽就是多少。
+      
+   最大模式（MesureSpec.AT_MOST） 这个也就是父控件能够给出的最大空间，当前组件的长或宽最大只能为这么大，也可以比这个小。
+      
+   未指定模式（MesureSpec.UNSPECIFIED）当前控件可以随便使用空间 不受限制。
+      
+   一个int类型有32位，测量模式有3种，要表示三种状态，至少得2位二进制位。系统采用最高的2位表示模式。
+   
+   最高两位是00代表未指定模式， 01代表精确模式，11代表最大模式。
+
+   重写onMeasure()方法关键代码：
+         `     int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);
+         
+              super.onMeasure(widthMeasureSpec,expandSpec);`
