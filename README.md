@@ -85,3 +85,9 @@
    int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);  
    super.onMeasure(widthMeasureSpec,expandSpec);
    ```
+
+#### 7.DrawerLayout穿透问题：
+
+  问题描述：弹出侧滑菜单后，点击空白地方可以穿透点击到被遮挡的内容。 
+  
+  解决办法：如果侧滑菜单布局在xml中是通过include引入的，在include引用的xml文件根节点加 ` android:clickable = "true"`
