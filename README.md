@@ -29,7 +29,7 @@
   
   【二】是否减少活动主窗口以便腾出空间放软键盘
   
-   这个属性中包含的值：
+    这个属性中包含的值：
    
     stateUnspecified：软键盘的状态没有指定，系统将选择一个合适的状态或者依赖于主题的设置。
     
@@ -47,4 +47,6 @@
        
     adjustResize：该Activity总是调整屏幕大小以便留出软键盘的空间。
        
-    adjustPan：当前窗口的内容将自动移动以便当前焦点从不被键盘覆盖，用户总能看到输入内容的部分。
+    adjustPan：当前窗口的内容将自动移动以便当前焦点从不被键盘覆盖，用户总能看到输入内容的部分。、
+    
+#### 5.adjustResize 在遇到 ` getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)`  时会失效。（Android 5497 Bug），解决方法： Android5497BugWorkaround类
