@@ -155,5 +155,7 @@
    问题描述：在代码中设置 ` setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)` 后，虽然打开Activity后旋转手机不会导致横竖屏切换，但是将手机先横屏再进行跳转还是会发生横竖屏切换（在代码中设置Activity为竖屏）。
    
    解决方法： 在AndroidManifest.xml中设置 ` screenOrientation = "portrait"`
+<<<<<<< HEAD
 
-#### 这是测试
+#### 11.
+>>>>>>> c84ec79f6e5c85483480cbb57fc0648404e62e2c
