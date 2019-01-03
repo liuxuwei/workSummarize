@@ -132,3 +132,26 @@
     }
     
  ```
+ 
+#### 9.防止修改系统字体大小，app字体大小改变。
+
+   解决办法：在Application中重写getResources()方法
+   
+   ``` java
+     @Override 
+     public Resources getResources() {
+           Resources res = super.getResourcesf();
+           if (res.getConfiguration().fontScale != 1){
+                Configuration  newConfig = new Configuration();
+                newConfig.setToDefaults();
+                res.updateConfiguration(newConfiguration, res.getDisplayMetrics());
+           }
+           return res;
+     }
+   ```
+   
+#### 10.设置禁止横竖屏切换 在代码中设置会有小问题。
+
+   问题描述：在代码中设置 ` setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)` 后，虽然打开Activity后旋转手机不会导致横竖屏切换，但是将手机先横屏再进行跳转还是会发生横竖屏切换（在代码中设置Activity为竖屏）。
+   
+   解决方法： 在AndroidManifest.xml中设置 ` screenOrientation = "portrait"`
