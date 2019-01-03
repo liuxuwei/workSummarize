@@ -49,10 +49,14 @@
        
     adjustPan：当前窗口的内容将自动移动以便当前焦点从不被键盘覆盖，用户总能看到输入内容的部分。、
     
-#### 5.adjustResize 在遇到 
+#### 5.adjustResize 失效问题
+
+在Activity中设置了
 
 ` getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)`  
 
-时会失效。（Android 5497 Bug），解决方法： Android5497BugWorkaround.java 见代码文件。 在Activity的onCreate()方法中使用
+后adjustResize会失效（Android 5497 Bug）。
+
+解决方法： Android5497BugWorkaround.java 见代码文件。 在Activity的onCreate()方法中使用
 
 ` Android5497BugWorkaround.assistActivity(this); `
