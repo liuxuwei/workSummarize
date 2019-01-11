@@ -166,6 +166,8 @@
         exclude 'META-INF/rxjava.properties'
     }
  ```
+ 
+ #### 12.三星手机拍照后，照片可能被旋转的问题
 
 
 
