@@ -193,6 +193,12 @@
 ![报错图片](https://github.com/liuxuwei/workSummarize/blob/master/iconError.png?raw=true)
 
 解决方法： 在manifest文件中，application节点下添加 `tools:replace="android:icon"`
+
+#### 16.在kotlin中使用单元测试，引入自定义rule报错：
+
+![报错图片](https://github.com/liuxuwei/workSummarize/blob/master/junitError.png?raw=true)
+
+解决方法： 在 @rule 注解后添加 @JvmField
  
 
 
