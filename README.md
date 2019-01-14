@@ -172,6 +172,8 @@
  #### 13.配置config.gradle时候，粗心犯下的一个错误
  
  ![groovy错误](https://raw.githubusercontent.com/liuxuwei/workSummarize/master/groovyError.png)
+ 
+ 原因：配置config.gradle时，格式应该为： compileSdkVersion : 28      自己粗心写成了 = 号
 
 
 
