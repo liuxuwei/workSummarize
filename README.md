@@ -187,6 +187,12 @@
  
  解决方法： 先使用`git pull origin master --allow-unrelated-histories`
            然后使用 `git push origin master: master`  (意思为：将本地的master分支推送到远程master分支)
+           
+#### 15.配置了config.gradle后，引入某个库编译报错
+
+![报错图片](https://github.com/liuxuwei/workSummarize/blob/master/iconError.png?raw=true)
+
+解决方法： 在manifest文件中，application节点下添加 `tools:replace="android:icon"`
  
 
 
