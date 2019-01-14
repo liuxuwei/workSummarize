@@ -175,5 +175,13 @@
  
  原因：配置config.gradle时，格式应该为： compileSdkVersion : 28      自己粗心写成了 = 号
 
+#### 14.git本地仓库和远程仓库合并时提示： refusing to merge unrelated histories
+
+ 错误重现步骤：在本地先创建了一个本地仓库，然后把自己的项目建好。 同时github上也建立了一个远程仓库。 在将本地代码提交的时候提示：Updates were rejected     
+ because the tip of your current branch is behind its remote counterpart. 然后使用git pull origin master 时提示 refusing to merge unrelated histories. 
+ 
+ 解决方法： 先使用git pull origin master --allow-unrelated-histories
+           然后使用 git push origin master: master  (意思为：将本地的master分支推送到远程master分支)
+ 
 
 
