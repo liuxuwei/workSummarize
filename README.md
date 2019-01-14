@@ -168,6 +168,10 @@
  ```
  
  #### 12.三星手机拍照后，照片可能被旋转的问题
+ 
+ #### 13.配置config.gradle时候，粗心犯下的一个错误
+ 
+ ![groovy错误](https://raw.githubusercontent.com/liuxuwei/workSummarize/master/groovyError.png)
 
 
 
