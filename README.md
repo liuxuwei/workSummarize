@@ -204,7 +204,19 @@
 
 ![报错图片](https://github.com/liuxuwei/workSummarize/blob/master/junitError2.png?raw=true)
 
-在stackoverflow上找到的解决办法：在 @Before 标记的方法中添加 `RxAndroidPlugins.setInitMainThreadSchedulerHandler(scheduler -> Schedulers.trampoline());`
+在stackoverflow上找到的解决办法：在 @Before 标记的方法中添加 
+
+`RxAndroidPlugins.setInitMainThreadSchedulerHandler(scheduler -> Schedulers.trampoline());`
+
+#### 18.Android P禁止明文传输，使用明文传输会crash：
+
+![报错图片](https://github.com/liuxuwei/workSummarize/blob/master/clearTextError.png?raw=true)
+
+解决办法：在AndroidManifest文件application节点添加
+
+`android:usesCleartextTraffic="true" `
+
+
  
 
 
