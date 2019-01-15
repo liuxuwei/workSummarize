@@ -199,6 +199,12 @@
 ![报错图片](https://github.com/liuxuwei/workSummarize/blob/master/junitError.png?raw=true)
 
 解决方法： 在 @rule 注解后添加 @JvmField
+
+#### 17.在junit单元测试中，使用RxJava2切换线程时报错，如图：
+
+![报错图片](https://github.com/liuxuwei/workSummarize/blob/master/junitError2.png?raw=true)
+
+在stackoverflow上找到的解决办法：在 @Before 标记的方法中添加 `RxAndroidPlugins.setInitMainThreadSchedulerHandler(scheduler -> Schedulers.trampoline());`
  
 
 
