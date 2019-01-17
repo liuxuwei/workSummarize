@@ -55,5 +55,7 @@ public class AndroidBug5497Workaround {
         mChildOfContent.getWindowVisibleDisplayFrame(r);
         return (r.bottom - r.top);
     }
+    
+    //first type error
 
 }
