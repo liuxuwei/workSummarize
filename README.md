@@ -216,6 +216,19 @@
 
 `android:usesCleartextTraffic="true" `
 
+#### 19.Android在App中吊起QQ进行联系
+
+实现代码：
+
+``` kotlin
+   try {
+      val url = "mqqwpa://im/chat?chat_type=wpa&uin=$qqNum"
+      startActivity(Intent(Intent.ACTION_VIEW,Uri.parse(url)))
+   } catch (e: Exception) {
+      toast("请先安装QQ")
+   }
+```
+
 
  
 
