@@ -229,6 +229,27 @@
    }
 ```
 
+#### 20.ViewPager结合Fragment，在Fragment中弹出输入法，切换Fragment时，输入法无法隐藏
+
+解决方法：
+
+在KeyBoardUtil中强制隐藏输入法的函数：
+
+``` kotlin
+    fun hideInputKeyBoard(context: Context){
+	val activity = context as Activity
+	activity.runOnUiThread{
+	    val mInputManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+	    if (activity.currentFocus != null) {
+		mInputManager.hideSoftInputFromWindow(activity.currentFocus.windowToken,InputMethodManager.HIDE_NOT_ALWAYS)
+		activity.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
+	    }
+	}
+    }
+```
+
+然后在ViewPager的addOnPageChangeListener()方法的 onPageScrolled()方法中进行调用。
+
 
  
 
