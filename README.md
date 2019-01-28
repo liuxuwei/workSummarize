@@ -250,6 +250,65 @@
 
 然后在ViewPager的addOnPageChangeListener()方法的 onPageScrolled()方法中进行调用。
 
+#### 21.WebView设置了 webview.getSettings().setBuiltInZoomControls(true)以后，用户触摸屏幕会出现放大缩小图标，如果在图标自动消失之前退出当前的Activity，会报异常。
+
+异常如图：
+       ![报错图片](链接)
+
+解决办法：自定义WebView（尝试网上的其他办法：比如在onDestroy中设置View.GONE， 在finish方法中removeAllViews() 在我的程序中不起作用）
+
+自定义WebView的代码（来自tackOverflow）
+
+``` java
+public class CustomWebView extends WebView{
+
+    private ZoomButtonsController zoom_controll = null;
+
+    public CustomWebView(Context context) {
+        this(context, null);
+    }
+
+    public CustomWebView(Context context, AttributeSet attrs) {
+        this(context, attrs, android.R.attr.webViewStyle);
+    }
+
+    public CustomWebView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        initWebSettings();
+    }
+
+    @SuppressLint("NewApi")
+    private void initWebSettings() {
+        WebSettings webSettings = getSettings();
+
+        webSettings.setSupportZoom(true);
+        webSettings.setBuiltInZoomControls(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            webSettings.setAllowContentAccess(true);
+            webSettings.setDisplayZoomControls(false);
+
+        } else {
+            try {
+                Class webview = Class.forName("android.webkit.WebView");
+                Method method = webview.getMethod("getZoomButtonsController");
+                zoom_controll = (ZoomButtonsController) method.invoke(this, null);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if(zoom_controll != null)
+            zoom_controll.getZoomControls().setVisibility(View.GONE);
+        return super.onTouchEvent(event);
+    }
+
+}
+```
+
 
  
 
