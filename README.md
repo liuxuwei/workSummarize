@@ -253,7 +253,7 @@
 #### 21.WebView设置了 webview.getSettings().setBuiltInZoomControls(true)以后，用户触摸屏幕会出现放大缩小图标，如果在图标自动消失之前退出当前的Activity，会报异常。
 
 异常如图：
-       ![报错图片](链接)
+       ![报错图片](https://github.com/liuxuwei/workSummarize/blob/master/webViewZoomButtonError.png?raw=true)
 
 解决办法：自定义WebView（尝试网上的其他办法：比如在onDestroy中设置View.GONE， 在finish方法中removeAllViews() 在我的程序中不起作用）
 
