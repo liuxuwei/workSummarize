@@ -319,6 +319,9 @@ public class CustomWebView extends WebView{
  
  会发现线程id是一样的，由此证实Service是运行在主线程中的
 
+#### 23.使用bindService将Activity与Service绑定，退出Activity时，如果未调用unBindService()方法，会报错：
+
+![报错图片](https://github.com/liuxuwei/workSummarize/blob/master/ServiceConnectionLeaked.png?raw=true)
 
  
 
