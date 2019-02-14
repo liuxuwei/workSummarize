@@ -309,6 +309,16 @@ public class CustomWebView extends WebView{
 }
 ```
 
+#### 22.Service是运行在主线程中的
+ 
+ 在启动Service的Activity的onCreate()方法， 和Service的onCreate()方法中同时打印日志： 
+ 
+ ```java
+ Log.i(TAG,"onCreate ThreaId:"+android.os.Process.myTid());
+ ```
+ 
+ 会发现线程id是一样的，由此证实Service是运行在主线程中的
+
 
  
 
