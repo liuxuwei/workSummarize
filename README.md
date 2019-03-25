@@ -323,6 +323,10 @@ public class CustomWebView extends WebView{
 
 ![报错图片](https://github.com/liuxuwei/workSummarize/blob/master/ServiceConnectionLeaked.png?raw=true)
 
+#### 24.报错信息：Could not determine artifacts for com.umeng.umsdk:common:1.5.4: No cached version available for offline mode
+ 
+解决方法：打开Settings-> Build,Execution,Deployment->Gradle，把offlin work的勾去掉。
+
  
 
 
