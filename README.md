@@ -327,6 +327,16 @@ public class CustomWebView extends WebView{
  
 解决方法：打开Settings-> Build,Execution,Deployment->Gradle，把offlin work的勾去掉。
 
+#### 25.生成APK时，统一APK名称的方式 ， 在build.gradle文件中 Android{}中添加以下代码：
+
+```groove
+  applicationVariants.all { variant -> 
+	variant.outputs.all {
+		outputFileName = "项目名称_${variant.versionName}_${variant.name}.apk"
+	}
+  }
+```
+
  
 
 
