@@ -337,6 +337,9 @@ public class CustomWebView extends WebView{
   }
 ```
 
+#### 26.使用git remote add origin git@git.com将远程仓库同本地仓库关联后，使用git pull origin master报错：fatal:refusing to merge unrelated histories.
+
+解决方法： 使用 git pull origin master --allow-unrelated-histories 将远程仓库和本地仓库进行连接。
  
 
 
