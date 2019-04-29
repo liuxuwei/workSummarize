@@ -340,6 +340,10 @@ public class CustomWebView extends WebView{
 #### 26.使用git remote add origin git@git.com将远程仓库同本地仓库关联后，使用git pull origin master报错：fatal:refusing to merge unrelated histories.
 
 解决方法： 使用 git pull origin master --allow-unrelated-histories 将远程仓库和本地仓库进行连接。
+
+#### 27.Flutter学习过程中引用第三方库url_launcher时报错： Unhandled Exception: MissingPluginException(No implementation found for method canLaunch on channel plugins.flutter.io/url_launcher)。  Flutter官方git  issues地址： [issue地址](https://github.com/flutter/flutter/issues/10967)
+
+其中对我的问题的解决方法，先停止运行中的app，重新运行即可。
  
 
 
