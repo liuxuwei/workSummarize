@@ -347,7 +347,9 @@ public class CustomWebView extends WebView{
 
 #### 28. 在添加了TextWatcher的EditText中（有maxLength限制） 使用第三方输入法剪贴板粘贴超过限制长度的字符串报错：java.lang.IndexOutOfBoundsException: setSpan (11 ... 11) ends beyond length 0
 这个仍然是谷歌官方bug 官方bug地址： [bug地址](https://issuetracker.google.com/issues/36963009)
+
 issues地址： [issue地址](https://code.google.com/archive/p/hunkypunk/issues/23)
+
 外国网友问题描述地址：  [问题描述地址](https://jira.appcelerator.org/browse/TIMOB-14081)
  
 
