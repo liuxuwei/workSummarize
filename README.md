@@ -344,6 +344,11 @@ public class CustomWebView extends WebView{
 #### 27.Flutter学习过程中引用第三方库url_launcher时报错： Unhandled Exception: MissingPluginException(No implementation found for method canLaunch on channel plugins.flutter.io/url_launcher)。  Flutter官方git  issues地址： [issue地址](https://github.com/flutter/flutter/issues/10967)
 
 其中对我的问题的解决方法，先停止运行中的app，重新运行即可。
+
+#### 28. 在添加了TextWatcher的EditText中（有maxLength限制） 使用第三方输入法剪贴板粘贴超过限制长度的字符串报错：java.lang.IndexOutOfBoundsException: setSpan (11 ... 11) ends beyond length 0
+这个仍然是谷歌官方bug 官方bug地址： [bug地址](https://issuetracker.google.com/issues/36963009)
+issues地址： [issue地址](https://code.google.com/archive/p/hunkypunk/issues/23)
+外国网友问题描述地址：  [问题描述地址](https://jira.appcelerator.org/browse/TIMOB-14081)
  
 
 
